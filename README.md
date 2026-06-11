@@ -58,5 +58,5 @@ python  login_tripadvisor.py   (Login manually, Press Enter to save cookies)
 
 - Run the scraper
 
-python TripAdvisor_scraper.py
+python tripadvisor_scraper.py
 
