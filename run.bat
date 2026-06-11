@@ -5,14 +5,6 @@ REM ==========================================
 REM TripAdvisor Scraper Runner
 REM ==========================================
 
-REM Check if city name is provided
-if "%~1"=="" (
-    echo Usage: run.bat ^<city_name^>
-    echo Example: run.bat Islamabad
-    exit /b 1
-)
-
-set CITY_NAME=%*
 
 echo ==========================================
 echo TripAdvisor Scraper
@@ -36,13 +28,24 @@ REM Install dependencies
 echo Installing requirements...
 pip install -r requirements.txt
 
+REM Install playwright and chromium browser
+echo Installing playwright and chromium browser
+pip install playwright chromium
+
+echo ==========================================
+echo Login First
+echo ==========================================
+
+REM Login Tripadvisor website
+python login_tripadvisor.py
+
+
 echo ==========================================
 echo Starting Scraper
-echo City: %CITY_NAME%
 echo ==========================================
 
 REM Run scraper
-python TripAdvisor_scraper.py --city "%CITY_NAME%"
+python tripadvisor_scraper.py
 
 echo ==========================================
 echo Scraping Completed

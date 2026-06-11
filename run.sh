@@ -1,17 +1,6 @@
 #!/bin/bash
 
-# ==========================================
-# TripAdvisor Scraper Runner
-# ==========================================
 
-# Check if city name is provided
-if [ -z "$1" ]; then
-    echo "Usage: ./run.sh <city_name>"
-    echo "Example: ./run.sh Islamabad"
-    exit 1
-fi
-
-CITY_NAME="$1"
 
 echo "=========================================="
 echo "TripAdvisor Scraper"
@@ -35,13 +24,19 @@ pip install --upgrade pip
 echo "Installing requirements..."
 pip install -r requirements.txt
 
+# Install playwright
+pip install playwright chromium
+
+# run login_tripadvisor.py  to login and save cookies
+python login_tripadvisor.py
+
 echo "=========================================="
 echo "Starting Scraper"
-echo "City: $CITY_NAME"
 echo "=========================================="
 
 # Run scraper
-python TripAdvisor_scraper.py --city "$CITY_NAME"
+python tripadvisor_scraper.py
+echo "Enter city name: "
 
 echo "=========================================="
 echo "Scraping Completed"

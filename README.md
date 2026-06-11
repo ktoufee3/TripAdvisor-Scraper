@@ -34,31 +34,29 @@ System Requirements
 Python 3.8+
 
 # Python Packages
-requests
+- requests
+- playwright
 
 # Install all dependencies using:
 pip install -r requirements.txt
 
+pip install playwright chromium
+
 # for easy run in linux environment jut run below two command:
 chmod +x run.sh
-./run.sh city_name
-
-- for example: ./run.sh Islamabad
+./run.sh
 
 
 # for easy run in Windows environment jut run below two command: 
-run.bat city_name
-
-- for example: run.bat Islamabad
+run.bat
 
 
+### Usage
 
-# Usage
-- Run the scraper by providing a city name:
+# Login First properly(save cookies)
+python  login_tripadvisor.py   (Login manually, Press Enter to save cookies)
 
-python TripAdvisor_scraper.py --city <city_name>
+- Run the scraper
 
-- For example
-python TripAdvisor_scraper.py --city Islamabad
-
+python TripAdvisor_scraper.py
 
