@@ -1,0 +1,6 @@
+venv/
+captured/
+debug.py
+link_based_scraper.py
+tripadvisor_data.py
+tripadvisor_interceptor.py
